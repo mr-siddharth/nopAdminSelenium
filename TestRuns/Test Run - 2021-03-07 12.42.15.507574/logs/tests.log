@@ -1,7 +1,0 @@
-2021-03-07 12:42:33,831 - test_addcustomer.py:setup - WARNING - Attempting login
-2021-03-07 12:42:42,852 - test_addcustomer.py:setup - INFO - login successful
-2021-03-07 12:43:18,923 - test_addcustomer.py:setup - WARNING - Attempting login
-2021-03-07 12:43:26,663 - test_addcustomer.py:setup - INFO - login successful
-2021-03-07 12:43:40,429 - conftest.py:driver_class_scoped - ERROR - testCases/test_addcustomer.py::TestDropDownLists: An exception occurred while taking a screenshot
-2021-03-07 12:43:54,622 - test_login.py:test_login - WARNING - Attempting login
-2021-03-07 12:44:03,288 - test_login.py:test_login - INFO - login successful
