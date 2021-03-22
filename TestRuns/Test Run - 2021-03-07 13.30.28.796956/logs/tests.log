@@ -1,0 +1,6 @@
+2021-03-07 13:30:46,298 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-07 13:30:55,388 - test_addcustomer.py:setup - INFO - login successful
+2021-03-07 13:31:32,234 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-07 13:31:39,937 - test_addcustomer.py:setup - INFO - login successful
+2021-03-07 13:32:10,581 - test_login.py:test_login - WARNING - Attempting login
+2021-03-07 13:32:16,459 - test_login.py:test_login - INFO - login successful

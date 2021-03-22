@@ -1,0 +1,14 @@
+2021-03-07 13:39:15,331 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-07 13:39:20,712 - test_addcustomer.py:setup - INFO - login successful
+2021-03-07 13:39:57,005 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-07 13:40:03,677 - test_addcustomer.py:setup - INFO - login successful
+2021-03-07 13:40:36,387 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-07 13:40:42,455 - test_addcustomer.py:setup - INFO - login successful
+2021-03-07 13:41:11,908 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-07 13:41:20,741 - test_addcustomer.py:setup - INFO - login successful
+2021-03-07 13:41:50,750 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-07 13:41:57,206 - test_addcustomer.py:setup - INFO - login successful
+2021-03-07 13:42:27,044 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-07 13:42:33,704 - test_addcustomer.py:setup - INFO - login successful
+2021-03-07 13:43:01,071 - test_login.py:test_login - WARNING - Attempting login
+2021-03-07 13:43:09,252 - test_login.py:test_login - INFO - login successful
