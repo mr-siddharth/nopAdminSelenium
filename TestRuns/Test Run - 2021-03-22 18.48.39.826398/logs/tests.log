@@ -1,0 +1,19 @@
+2021-03-22 18:48:57,526 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:49:04,166 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:49:40,574 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:49:44,574 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:50:19,424 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:50:24,374 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:51:01,859 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:51:07,056 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:51:44,441 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:51:49,064 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:52:23,162 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:52:27,230 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:52:58,649 - conftest.py:driver_class_scoped - ERROR - testCases/test_addcustomer.py::TestDropDownLists: An exception occurred while taking a screenshot
+Traceback (most recent call last):
+  File "C:\Users\Siddharth\Google Drive\PycharmProjects\nopAdminSelenium\testCases\conftest.py", line 98, in driver_class_scoped
+    setup_results = [test.setup_result.passed for test in all_test_functions]
+  File "C:\Users\Siddharth\Google Drive\PycharmProjects\nopAdminSelenium\testCases\conftest.py", line 98, in <listcomp>
+    setup_results = [test.setup_result.passed for test in all_test_functions]
+AttributeError: 'Function' object has no attribute 'setup_result'

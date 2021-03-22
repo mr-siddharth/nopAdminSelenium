@@ -1,0 +1,7 @@
+2021-03-22 18:42:36,470 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:42:42,516 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:43:23,034 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:43:28,770 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:44:22,925 - test_addcustomer.py:setup - WARNING - Attempting login
+2021-03-22 18:44:28,511 - test_addcustomer.py:setup - INFO - login successful
+2021-03-22 18:44:50,908 - conftest.py:driver - ERROR - testCases/test_addcustomer.py::TestsAddNewCustomer::test_alertmessage_noemail_registered_customer: An exception occurred while taking a screenshot

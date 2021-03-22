@@ -22,6 +22,7 @@ class TestsAddNewCustomer:
         lp.login(self.admin_email, self.admin_password)
         assert "dashboard" in lp.get_title().lower()
         logger.info("login successful")
+        wait_till_dom_doesnot_change(self.driver)
         mm = MainMenu(self.driver)
         mm.customers_section.click()
         mm.customers_lnk.click()

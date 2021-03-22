@@ -14,7 +14,7 @@ class TxtPassword(BaseTxtElement):
 
 class LoginButton(BaseButtonElement):
 
-    locator = (By.CSS_SELECTOR, "input[type=submit]")
+    locator = (By.CSS_SELECTOR, "button[type=submit]")
 
 
 class ErrorMessage(BaseElement):
