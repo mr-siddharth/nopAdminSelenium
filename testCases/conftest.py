@@ -35,6 +35,11 @@ def pytest_runtest_makereport(item, call):
 
     setattr(item, res.when + "_result", res)
 
+    if res.when == "call" and res.failed:
+        get_logger().error(f"Test case --> {item.nodeid} failed. Error Message:\n {call.excinfo}")
+    elif res.when == 'setup' and res.failed:
+        get_logger().error(f"Setup for {item.nodeid} failed. Error Message:\n {call.excinfo}")
+
 
 # Adding a custom command line option
 def pytest_addoption(parser):
@@ -95,12 +100,10 @@ def driver_class_scoped(browser, request, logger):
     try:
         all_test_functions = [item for item in request.session.items if item.parent.nodeid == request.node.nodeid]
         if all_test_functions != []:
-            setup_results = [test.setup_result.passed for test in all_test_functions]
-            call_results = [test.call_result.passed for test in all_test_functions]
-            if False in setup_results:
+            if all_test_functions[0].setup_result.failed:  # i.e. attribute could not be setup because class setup failed
                 print("setting up the test class failed!", request.node.nodeid)
                 take_screenshot(driver, "FAILED_" + request.keywords.node.name)
-            elif False in call_results:
+            elif False in [test.call_result.passed for test in all_test_functions]:  # i.e. one of the test cases in the class failed
                 take_screenshot(driver, "FAILED_" + request.keywords.node.name)
     except:
         print(request.node.nodeid + ": An exception occurred while taking a screenshot")

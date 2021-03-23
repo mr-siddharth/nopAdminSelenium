@@ -30,8 +30,8 @@ class TestsLogIn:
         try:
             lp.login(testdata["Email"], testdata["Password"])
             assert "login" in lp.get_title().lower()
-        except:
-            write_test_results_failed("incorrect_credentials", testdata["rownum"])
+        except Exception as e:
+            write_test_results_failed("incorrect_credentials", testdata["rownum"], str(e))
             logger.exception(
                 f"Test Case failed for useremail:{testdata['Email']} and password:{testdata['Password']}. "
                 "Test DataRow no: " + str(testdata["rownum"]))
