@@ -97,7 +97,7 @@ class TestDropDownLists:
         lp = LoginPage(self.driver)
         logger.warning("Attempting login")
         lp.login(self.admin_email, self.admin_password)
-        assert "dashyboard" in lp.get_title().lower()
+        assert "dashboard" in lp.get_title().lower()
         logger.info("login successful")
         wait_till_dom_doesnot_change(self.driver, 2)
         mm = MainMenu(self.driver)

@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2af372ce-dbde-4426-9d61-54c3c6a4410c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestData/Test Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestData/Test Data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRuns/Test Run - 2021-03-22 18.42.21.796216/Test Data.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRuns/Test Run - 2021-03-22 18.42.21.796216/logs/tests.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRuns/Test Run - 2021-03-22 18.48.39.826398/Test Data.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestRuns/Test Run - 2021-03-22 18.48.39.826398/logs/tests.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geckodriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/geckodriver.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/test_addcustomer.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_addcustomer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_login.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +23,7 @@
   <component name="ProjectId" id="1mmAiLpgmQGOwujbgYYxz52Yv8H" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
