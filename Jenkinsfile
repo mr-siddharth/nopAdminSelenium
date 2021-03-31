@@ -17,7 +17,7 @@ pipeline {
 
           }
           steps {
-            bat 'pytest -vs testCases/test_login.py'
+            bat 'pytest -vs testCases/test_login.py::TestsLogIn::test_login'
           }
         }
 
@@ -29,7 +29,7 @@ pipeline {
 
           }
           steps {
-            bat 'pytest -vs testCases/test_addcustomer.py'
+            bat 'pytest -vs testCases/test_login.py::TestsLogIn::test_incorrect_password[testdata0]'
           }
         }
 
