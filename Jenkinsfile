@@ -49,4 +49,27 @@ pipeline {
     }
 
   }
+  post {
+    always {
+      echo 'One way or another, I have finished'
+    }
+
+    success {
+      echo 'I succeeded!'
+    }
+
+    unstable {
+      echo 'I am unstable :/'
+    }
+
+    failure {
+      echo 'I failed :('
+      mail(to: 'siddharth2k007@gmail.com', subject: "Failed Pipeline ${currentBuild.fullDisplayName}", body: " For details about the failure, see ${env.BUILD_URL}")
+    }
+
+    changed {
+      echo 'Things were different before...'
+    }
+
+  }
 }
