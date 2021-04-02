@@ -29,7 +29,7 @@ pipeline {
 
           }
           steps {
-            bat 'pytest -vs testCases/add_customer.py::TestsAddNewCustomer::test_add_customer'
+            bat 'pytest -vs testCases/test_addcustomer.py::TestsAddNewCustomer::test_add_customer'
           }
         }
 
