@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2af372ce-dbde-4426-9d61-54c3c6a4410c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 15.56.11.561392/Test Data.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 15.56.11.561392/logs/tests.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 16.01.37.693803/Test Data.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 16.01.37.693803/logs/tests.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 16.01.37.693803/screenshots/FAILED_test_add_customer - 2021-04-10 16.02.35.565757.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 16.09.19.959065/Test Data.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 16.09.19.959065/logs/tests.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 16.09.19.959065/screenshots/FAILED_test_alertmessage_role_cannot_be_both_registered_and_guests - 2021-04-10 16.18.39.307180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 16.35.30.736443/Test Data.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 16.35.30.736443/logs/tests.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 17.58.42.308790/Test Data.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 17.58.42.308790/logs/tests.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestRuns/Test Run - 2021-04-10 17.58.42.308790/screenshots/FAILED_test_add_customer - 2021-04-10 17.59.47.993058.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/conftest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

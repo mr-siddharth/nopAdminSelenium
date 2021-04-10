@@ -37,9 +37,9 @@ def pytest_runtest_makereport(item, call):
     setattr(item, res.when + "_result", res)
 
     if res.when == "call" and res.failed:
-        get_logger().exception(f"Test case --> {item.nodeid} failed. Error Message:\n {traceback.format_exc()}")
+        get_logger().exception(f"Test case --> {item.nodeid} failed. Error Message:\n {call.excinfo}")
     elif res.when == 'setup' and res.failed:
-        get_logger().exception(f"Setup for {item.nodeid} failed. Error Message:\n {traceback.format_exc()}")
+        get_logger().exception(f"Setup for {item.nodeid} failed. Error Message:\n {call.excinfo}")
 
 
 # Adding a custom command line option
@@ -79,8 +79,8 @@ def driver(browser, request, logger):
             if request.node.call_result.failed:
                 take_screenshot(driver, "FAILED_" + request.node.name)
     except Exception:
-        print(request.node.nodeid + ": An exception occurred while taking a screenshot. Error Message:\n" + traceback.format_exc())
-        logger.exception(request.node.nodeid + ": An exception occurred while taking a screenshot. Error Message:\n" + traceback.format_exc())
+        print(request.node.nodeid + ": An exception occurred while taking a screenshot")
+        logger.exception(request.node.nodeid + ": An exception occurred while taking a screenshot")
     finally:
         driver.quit()
 
