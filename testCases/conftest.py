@@ -4,6 +4,7 @@ from utilities.logger import get_logger
 from testLib.lib import *
 from configurations import testconfig
 import os, shutil
+import traceback
 
 firefox_driver_path = "C:\\Users\\Siddharth\\Google Drive\\PycharmProjects\\MyHome\\seleniumdrivers\\geckodriver.exe"
 chrome_driver_path = "C:\\Users\\Siddharth\\Google Drive\\PycharmProjects\\MyHome\\seleniumdrivers\\chromedriver.exe"
@@ -36,9 +37,9 @@ def pytest_runtest_makereport(item, call):
     setattr(item, res.when + "_result", res)
 
     if res.when == "call" and res.failed:
-        get_logger().error(f"Test case --> {item.nodeid} failed. Error Message:\n {call.excinfo}")
+        get_logger().exception(f"Test case --> {item.nodeid} failed. Error Message:\n {traceback.format_exc()}")
     elif res.when == 'setup' and res.failed:
-        get_logger().error(f"Setup for {item.nodeid} failed. Error Message:\n {call.excinfo}")
+        get_logger().exception(f"Setup for {item.nodeid} failed. Error Message:\n {traceback.format_exc()}")
 
 
 # Adding a custom command line option
@@ -57,6 +58,9 @@ def driver(browser, request, logger):
         driver = webdriver.Chrome(executable_path=chrome_driver_path)
     elif browser.lower() == "firefox":
         driver = webdriver.Firefox(executable_path=firefox_driver_path)
+    elif browser.lower() == "grid":
+        selenium_grid_url = "http://192.168.80.97:4444/wd/hub"
+        driver = webdriver.Remote(command_executor=selenium_grid_url, desired_capabilities=webdriver.DesiredCapabilities.CHROME.copy())
     else:
         pytest.exit("Unknown browser specified", 1)
 
@@ -74,11 +78,11 @@ def driver(browser, request, logger):
         elif request.node.setup_result.passed:
             if request.node.call_result.failed:
                 take_screenshot(driver, "FAILED_" + request.node.name)
-    except:
-        print(request.node.nodeid + ": An exception occurred while taking a screenshot")
-        logger.error(request.node.nodeid + ": An exception occurred while taking a screenshot")
+    except Exception:
+        print(request.node.nodeid + ": An exception occurred while taking a screenshot. Error Message:\n" + traceback.format_exc())
+        logger.exception(request.node.nodeid + ": An exception occurred while taking a screenshot. Error Message:\n" + traceback.format_exc())
     finally:
-        driver.close()
+        driver.quit()
 
 
 @pytest.fixture(scope="class")
@@ -87,6 +91,9 @@ def driver_class_scoped(browser, request, logger):
         driver = webdriver.Chrome(executable_path=chrome_driver_path)
     elif browser.lower() == "firefox":
         driver = webdriver.Firefox(executable_path=firefox_driver_path)
+    elif browser.lower() == "grid":
+        selenium_grid_url = "http://localhost:4444/wd/hub"
+        driver = webdriver.Remote(command_executor=selenium_grid_url, desired_capabilities=webdriver.DesiredCapabilities.CHROME.copy())
     else:
         pytest.exit("Unknown browser specified", 1)
 
@@ -109,7 +116,7 @@ def driver_class_scoped(browser, request, logger):
         print(request.node.nodeid + ": An exception occurred while taking a screenshot")
         logger.exception(request.node.nodeid + ": An exception occurred while taking a screenshot")
     finally:
-        driver.close()
+        driver.quit()
 
 
 @pytest.fixture(scope="session")
