@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Start Docker-Grid') {
       steps {
-        bat 'docker-compose up'
+        bat 'docker-compose up -d'
       }
     }
 
