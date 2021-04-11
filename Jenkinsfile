@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Start Docker-Grid') {
       steps {
-        echo 'No Build Step Required'
+        bat 'docker-compose up -d'
       }
     }
 
@@ -17,7 +17,7 @@ pipeline {
 
           }
           steps {
-            bat 'pytest -vs testCases/test_login.py::TestsLogIn::test_login'
+            bat 'pytest -vs --browser grid-chrome testCases/test_login.py'
           }
         }
 
@@ -29,7 +29,7 @@ pipeline {
 
           }
           steps {
-            bat 'pytest -vs testCases/test_addcustomer.py::TestsAddNewCustomer::test_add_customer'
+            bat 'pytest -vs --browser grid-ff -n 2 testCases/test_addcustomer.py'
           }
         }
 
