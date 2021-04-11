@@ -46,21 +46,30 @@ def pytest_runtest_makereport(item, call):
 def pytest_addoption(parser):
     parser.addoption("--browser", default="firefox", help="The browser you want to run your tests in. "
                                                           "Default is firefox.")
+    parser.addoption("--gridhub", default="http://localhost:4444/wd/hub",
+                     help="URL of the Selenium Grid. Default is http://localhost:4444/wd/hub")
 
 # Fixture that returns the value of the command line option
 @pytest.fixture(scope="session")
 def browser(request):
     return request.config.getoption("--browser")
 
+@pytest.fixture(scope="session")
+def gridhub(request):
+    return request.config.getoption("--gridhub")
+
 @pytest.fixture
-def driver(browser, request, logger):
+def driver(browser, request, logger, gridhub):
     if browser.lower() == "chrome":
         driver = webdriver.Chrome(executable_path=chrome_driver_path)
     elif browser.lower() == "firefox":
         driver = webdriver.Firefox(executable_path=firefox_driver_path)
-    elif browser.lower() == "grid":
-        selenium_grid_url = "http://192.168.80.97:4444/wd/hub"
-        driver = webdriver.Remote(command_executor=selenium_grid_url, desired_capabilities=webdriver.DesiredCapabilities.CHROME.copy())
+    elif browser.lower() == "grid-chrome":
+        driver = webdriver.Remote(command_executor=gridhub,
+                                  desired_capabilities=webdriver.DesiredCapabilities.CHROME.copy())
+    elif browser.lower() in ("grid-ff", "grid-firefox", 'grid'):
+        driver = webdriver.Remote(command_executor=gridhub,
+                                  desired_capabilities=webdriver.DesiredCapabilities.FIREFOX.copy())
     else:
         pytest.exit("Unknown browser specified", 1)
 
@@ -91,9 +100,12 @@ def driver_class_scoped(browser, request, logger):
         driver = webdriver.Chrome(executable_path=chrome_driver_path)
     elif browser.lower() == "firefox":
         driver = webdriver.Firefox(executable_path=firefox_driver_path)
-    elif browser.lower() == "grid":
-        selenium_grid_url = "http://localhost:4444/wd/hub"
-        driver = webdriver.Remote(command_executor=selenium_grid_url, desired_capabilities=webdriver.DesiredCapabilities.CHROME.copy())
+    elif browser.lower() == "grid-chrome":
+        driver = webdriver.Remote(command_executor=gridhub,
+                                  desired_capabilities=webdriver.DesiredCapabilities.CHROME.copy())
+    elif browser.lower() in ("grid-ff", "grid-firefox", 'grid'):
+        driver = webdriver.Remote(command_executor=gridhub,
+                                  desired_capabilities=webdriver.DesiredCapabilities.FIREFOX.copy())
     else:
         pytest.exit("Unknown browser specified", 1)
 
