@@ -95,7 +95,7 @@ def driver(browser, request, logger, gridhub):
 
 
 @pytest.fixture(scope="class")
-def driver_class_scoped(browser, request, logger):
+def driver_class_scoped(browser, request, logger, gridhub):
     if browser.lower() == "chrome":
         driver = webdriver.Chrome(executable_path=chrome_driver_path)
     elif browser.lower() == "firefox":
