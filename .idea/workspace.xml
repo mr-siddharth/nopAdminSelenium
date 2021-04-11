@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2af372ce-dbde-4426-9d61-54c3c6a4410c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geckodriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/geckodriver.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,10 +151,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.temp" />
-      <item itemvalue="Python.test_login" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python tests.pytest" />
+      <item itemvalue="Python.test_login" />
       <item itemvalue="Python tests.pytest for test_addcustomer.TestDropDownLists" />
+      <item itemvalue="Python tests.pytest" />
     </list>
     <recent_temporary>
       <list>
