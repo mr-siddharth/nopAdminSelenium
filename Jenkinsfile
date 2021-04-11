@@ -36,6 +36,12 @@ pipeline {
       }
     }
 
+    stage('Shutdown Docker-Grid') {
+      steps {
+        bat 'docker-compose down'
+      }
+    }
+
     stage('Deploy to Staging') {
       steps {
         echo 'Deploy to Staging'
