@@ -13,5 +13,3 @@ COPY . /home/app
 
 EXPOSE 6969
 CMD ["pip", "list"]
-
-http://172.20.0.2:4444/wd/hub
