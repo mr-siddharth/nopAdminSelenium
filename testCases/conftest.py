@@ -6,8 +6,8 @@ from configurations import testconfig
 import os, shutil
 import traceback
 
-firefox_driver_path = "C:\\Users\\Siddharth\\Google Drive\\PycharmProjects\\MyHome\\seleniumdrivers\\geckodriver.exe"
-chrome_driver_path = "C:\\Users\\Siddharth\\Google Drive\\PycharmProjects\\MyHome\\seleniumdrivers\\chromedriver.exe"
+firefox_driver_path = r"C:\Users\siddh\Google Drive\PycharmProjects\MyHome\seleniumdrivers\geckodriver.exe"
+chrome_driver_path = r"C:\Users\siddh\Google Drive\PycharmProjects\MyHome\seleniumdrivers\chromedriver.exe"
 
 # ---------Initial Folder & File Setup---------- #
 testconfig.TEST_RUN_DIR = ".\\TestRuns\\" + re.sub(":", ".", "Test Run - " + str(datetime.now())) + "\\"
