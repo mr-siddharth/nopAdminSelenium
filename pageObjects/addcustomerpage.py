@@ -73,12 +73,12 @@ class SelectCustomerRoles(BaseElement):
     def select_role(self, role):
         if not (role in self.get_selected_roles()):
             self.click()
-            WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(
+            WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(
                 (By.XPATH, f"//ul[@id='SelectedCustomerRoleIds_listbox']/li[text()='{role}']"))).click()
 
     def deselect_role(self, role):
         if role in self.get_selected_roles():
-            WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(
+            WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(
                 (By.XPATH, f"//ul[@id='SelectedCustomerRoleIds_taglist']/li/span[text()='{role}']/following-sibling::span"))).click()
 
     def get_selected_roles(self):

@@ -9,14 +9,20 @@ import traceback
 firefox_driver_path = r"C:\Users\siddh\Google Drive\PycharmProjects\MyHome\seleniumdrivers\geckodriver.exe"
 chrome_driver_path = r"C:\Users\siddh\Google Drive\PycharmProjects\MyHome\seleniumdrivers\chromedriver.exe"
 
+
 # ---------Initial Folder & File Setup---------- #
-testconfig.TEST_RUN_DIR = ".\\TestRuns\\" + re.sub(":", ".", "Test Run - " + str(datetime.now())) + "\\"
-testconfig.LOG_DIR = testconfig.TEST_RUN_DIR + "\\logs\\"
-testconfig.SCREENSHOTS_DIR = testconfig.TEST_RUN_DIR + "\\screenshots\\"
-os.makedirs(testconfig.TEST_RUN_DIR)
-os.makedirs(testconfig.LOG_DIR)
-os.makedirs(testconfig.SCREENSHOTS_DIR)
-print("Find test run artifacts at: " + os.getcwd() + testconfig.TEST_RUN_DIR[1:])
+@pytest.fixture(scope='session', autouse=True)
+def folder_and_file_setup(logger):
+    testconfig.TEST_RUN_DIR = ".\\TestRuns\\" + re.sub(":", ".", "Test Run - " + str(datetime.now())) + "\\"
+    testconfig.LOG_DIR = testconfig.TEST_RUN_DIR + "\\logs\\"
+    testconfig.SCREENSHOTS_DIR = testconfig.TEST_RUN_DIR + "\\screenshots\\"
+    os.makedirs(testconfig.TEST_RUN_DIR)
+    os.makedirs(testconfig.LOG_DIR)
+    os.makedirs(testconfig.SCREENSHOTS_DIR)
+    # print("Find test run artifacts at: " + os.getcwd() + testconfig.TEST_RUN_DIR[1:])
+    logger.critical("Find test run artifacts at: " + os.getcwd() + testconfig.TEST_RUN_DIR[1:])
+
+
 # ---------------------------------------------- #
 
 
@@ -49,14 +55,17 @@ def pytest_addoption(parser):
     parser.addoption("--gridhub", default="http://localhost:4444/wd/hub",
                      help="URL of the Selenium Grid. Default is http://localhost:4444/wd/hub")
 
+
 # Fixture that returns the value of the command line option
 @pytest.fixture(scope="session")
 def browser(request):
     return request.config.getoption("--browser")
 
+
 @pytest.fixture(scope="session")
 def gridhub(request):
     return request.config.getoption("--gridhub")
+
 
 @pytest.fixture
 def driver(browser, request, logger, gridhub):
@@ -119,10 +128,12 @@ def driver_class_scoped(browser, request, logger, gridhub):
     try:
         all_test_functions = [item for item in request.session.items if item.parent.nodeid == request.node.nodeid]
         if all_test_functions != []:
-            if all_test_functions[0].setup_result.failed:  # i.e. attribute could not be setup because class setup failed
+            if all_test_functions[
+                0].setup_result.failed:  # i.e. attribute could not be setup because class setup failed
                 print("setting up the test class failed!", request.node.nodeid)
                 take_screenshot(driver, "FAILED_" + request.keywords.node.name)
-            elif False in [test.call_result.passed for test in all_test_functions]:  # i.e. one of the test cases in the class failed
+            elif False in [test.call_result.passed for test in
+                           all_test_functions]:  # i.e. one of the test cases in the class failed
                 take_screenshot(driver, "FAILED_" + request.keywords.node.name)
     except:
         print(request.node.nodeid + ": An exception occurred while taking a screenshot")
@@ -141,6 +152,7 @@ def pytest_configure(config):
     config._metadata['Project Name'] = 'nop Commerce Admin App'
     config._metadata['Module Name'] = 'Customers'
     config._metadata['Tester'] = 'Siddharth'
+
 
 def pytest_metadata(metadata):
     # Removing the following fields for the report
