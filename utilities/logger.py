@@ -19,6 +19,6 @@ def get_logger():
     logger.addHandler(s_handler)
 
     # There seems to be an issue. The logger is not writing INFO level messages. Hence, adding the following line:
-    logging.getLogger().setLevel(logging.INFO)
+    logger.setLevel(logging.INFO)
 
     return logger

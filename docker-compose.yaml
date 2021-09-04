@@ -17,6 +17,8 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
+      - NODE_MAX_INSTANCES=4
+      - NODE_MAX_SESSION=4
 
   firefox:
     image: selenium/node-firefox
@@ -27,5 +29,5 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
-      - NODE_MAX_INSTANCES=2
-      - NODE_MAX_SESSION=2
+      - NODE_MAX_INSTANCES=4
+      - NODE_MAX_SESSION=4
