@@ -3,4 +3,5 @@ venv/
 *.pyc
 TestRuns/
 report.html
+assets/
 
