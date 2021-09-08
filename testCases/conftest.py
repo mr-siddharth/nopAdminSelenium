@@ -9,8 +9,8 @@ from filelock import FileLock
 import json
 
 
-firefox_driver_path = r"C:\Users\siddh\Google Drive\PycharmProjects\MyHome\seleniumdrivers\geckodriver.exe"
-chrome_driver_path = r"C:\Users\siddh\Google Drive\PycharmProjects\MyHome\seleniumdrivers\chromedriver.exe"
+firefox_driver_path = r"C:\webdrivers\geckodriver.exe"
+chrome_driver_path = r"C:\webdrivers\chromedriver.exe"
 
 
 # ---------Initial Folder & File Setup---------- #
@@ -151,8 +151,8 @@ def driver_class_scoped(browser, request, logger, gridhub):
     try:
         all_test_functions = [item for item in request.session.items if item.parent.nodeid == request.node.nodeid]
         if all_test_functions != []:
-            if all_test_functions[
-                0].setup_result.failed:  # i.e. attribute could not be setup because class setup failed
+            if all_test_functions[0].setup_result.failed:
+                # i.e. attribute could not be setup because class setup failed
                 print("setting up the test class failed!", request.node.nodeid)
                 take_screenshot(driver, "FAILED_" + request.keywords.node.name)
             elif False in [test.call_result.passed for test in
