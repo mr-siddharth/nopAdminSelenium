@@ -17,16 +17,23 @@ class TestsLogIn:
     @pytest.mark.sanity
     @pytest.mark.regression
     def test_login(self, logger, launch_url):
+        """Verifies that user is able to login with valid credentials."""
         lp = LoginPage(self.driver)
-        logger.warning("Attempting login")
+        logger.info(f"Attempting login using email: {self.admin_email} and password: {self.admin_password}")
         lp.login(self.admin_email, self.admin_password)
         assert "dashboard" in lp.get_title().lower()
         logger.info("login successful")
 
     @pytest.mark.parametrize("testdata", fetch_testdata("incorrect_credentials"))
     def test_incorrect_password(self, launch_url, logger, testdata):
+        """
+        Verifies that user is NOT able to login with invalid credentials.
+        Data is fetched from an excel file containing test data. Result of the
+        test is written back to the same excel file. This excel file can be found
+        in respective Test Run directory.
+        """
         lp = LoginPage(self.driver)
-        logger.info(f"Attempting login with useremail:{testdata['Email']} and password:{testdata['Password']}")
+        logger.info(f"Attempting login with email:{testdata['Email']} and password:{testdata['Password']}")
         try:
             lp.login(testdata["Email"], testdata["Password"])
             assert "login" in lp.get_title().lower()
@@ -40,5 +47,3 @@ class TestsLogIn:
             write_test_results_passed("incorrect_credentials", testdata["rownum"])
             logger.info("login failed as expected. "
                         "Test DataRow no: " + str(testdata["rownum"]))
-        # assert lp.get_error_message() == "Login was unsuccessful. Please correct the errors and try again."\
-        #                                  "\nNo customer account found"

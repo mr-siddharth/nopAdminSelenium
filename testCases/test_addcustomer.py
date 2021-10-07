@@ -4,8 +4,8 @@ from pageObjects.addcustomerpage import AddCustomerPage
 from pageObjects.mainmenu import MainMenu
 from pageObjects.customerspage import CustomersPage
 import utilities.readconfig as config
-from utilities.excelutils import *
 from testLib.lib import *
+
 
 @pytest.mark.regression
 class TestsAddNewCustomer:
@@ -18,7 +18,7 @@ class TestsAddNewCustomer:
         self.driver = driver
         self.driver.get(self.base_url)
         lp = LoginPage(self.driver)
-        logger.warning("Attempting login")
+        logger.info(f"Attempting login using email: {self.admin_email} and password: {self.admin_password}")
         lp.login(self.admin_email, self.admin_password)
         assert "dashboard" in lp.get_title().lower()
         logger.info("login successful")
@@ -35,7 +35,7 @@ class TestsAddNewCustomer:
         add_cust_page = AddCustomerPage(self.driver)
         add_cust_page.email.enter(get_random_string() + "@gmail.com")
         add_cust_page.password.enter("password123")
-        add_cust_page.firstname.enter("Chicky")
+        add_cust_page.firstname.enter("Aman")
         add_cust_page.lastname.enter("Sharma")
         add_cust_page.male.click()
         add_cust_page.dob.enter("9/3/1985")
@@ -72,7 +72,7 @@ class TestsAddNewCustomer:
         add_cust_page.customer_roles.select_role("Guests")
         add_cust_page.save_btn.click()
         assert add_cust_page.get_error_messages() == \
-            ["The customer cannot be in both 'Guests' and 'Registered' customer roles"]
+               ["The customer cannot be in both 'Guests' and 'Registered' customer roles"]
 
     def test_alertmessage_role_cannot_be_both_registered_and_guests(self, setup):
         add_cust_page = AddCustomerPage(self.driver)
@@ -95,7 +95,7 @@ class TestDropDownLists:
         request.cls.driver = driver_class_scoped
         self.driver.get(self.base_url)
         lp = LoginPage(self.driver)
-        logger.warning("Attempting login")
+        logger.info(f"Attempting login using email: {self.admin_email} and password: {self.admin_password}")
         lp.login(self.admin_email, self.admin_password)
         assert "dashboard" in lp.get_title().lower()
         logger.info("login successful")

@@ -5,7 +5,10 @@ from selenium.webdriver.support.ui import Select
 
 
 class BaseElement:
-    """Requires locator variable to be set by a sub-class"""
+    """
+    Base class for all the other types of web elements.
+    Requires locator variable to be set by a sub-class
+    """
 
     def __init__(self, driver):
         self.driver = driver
@@ -18,6 +21,10 @@ class BaseElement:
 
 
 class BaseTxtElement(BaseElement):
+    """
+    Class for web element, <input type='text'>.
+    Requires locator variable to be set by a sub-class
+    """
 
     def enter(self, value):
         textbox = WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(self.locator))
@@ -30,11 +37,18 @@ class BaseTxtElement(BaseElement):
 
 
 class BaseButtonElement(BaseElement):
-
+    """
+    Class for web element, <input type='button'> or <button>
+    Requires locator variable to be set by a sub-class
+    """
     pass
 
 
 class BaseRadioElement(BaseElement):
+    """
+    Class for web element, <input type='radio'>.
+    Requires locator variable to be set by a sub-class
+    """
 
     def click(self):
         WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(self.locator)).click()
@@ -44,10 +58,10 @@ class BaseRadioElement(BaseElement):
 
 
 class BaseCheckboxElement(BaseElement):
-
-    # def click(self):
-    #     WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(self.locator)).click()
-
+    """
+    Class for web element, <input type='checkbox'>.
+    Requires locator variable to be set by a sub-class
+    """
     def is_selected(self):
         return WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(self.locator)).is_selected()
 
@@ -61,6 +75,10 @@ class BaseCheckboxElement(BaseElement):
 
 
 class BaseDropDownElement(BaseElement):
+    """
+    Class for web element, <select>.
+    Requires locator variable to be set by a sub-class
+    """
 
     def select_by_visible_text(self, text):
         Select(WebDriverWait(self.driver, 30).until(
