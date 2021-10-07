@@ -3,8 +3,7 @@ from selenium import webdriver
 from utilities.logger import get_logger
 from testLib.lib import *
 from configurations import testconfig
-import os, shutil
-import traceback
+import os
 from filelock import FileLock
 import json
 
@@ -23,12 +22,15 @@ def folder_and_file_setup(worker_id, tmp_path_factory):
         os.makedirs(testconfig.TEST_RUN_DIR)
         os.makedirs(testconfig.LOG_DIR)
         os.makedirs(testconfig.SCREENSHOTS_DIR)
-        # print("Find test run artifacts at: " + os.getcwd() + testconfig.TEST_RUN_DIR[1:])
+        print("Find test run artifacts at: " + os.getcwd() + testconfig.TEST_RUN_DIR[1:])
         return
 
     # get the temp directory shared by all workers
     root_tmp_dir = tmp_path_factory.getbasetemp().parent
 
+    # Following is a workaround to prevent pytest-xdist from creating multiple Test Run
+    # folders by different threads. Only a single Test Run folder needs to created for
+    # test run.
     fn = root_tmp_dir / "data.json"
     with FileLock(str(fn) + ".lock"):
         if fn.is_file():
@@ -168,7 +170,7 @@ def driver_class_scoped(browser, request, logger, gridhub):
 @pytest.fixture(scope="session")
 def logger():
     lgr = get_logger()
-    lgr.critical("Find test run artifacts at: " + os.getcwd() + testconfig.TEST_RUN_DIR[1:])
+    lgr.info("Find test run artifacts at: " + os.getcwd() + testconfig.TEST_RUN_DIR[1:])
     return lgr
 
 
