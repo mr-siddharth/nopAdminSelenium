@@ -1,0 +1,70 @@
+1635661926452	geckodriver	INFO	Listening on 127.0.0.1:51951
+1635661929740	geckodriver	INFO	Listening on 127.0.0.1:51960
+1635661932859	geckodriver	INFO	Listening on 127.0.0.1:51969
+1635662058221	geckodriver	INFO	Listening on 127.0.0.1:52009
+1635662061433	geckodriver	INFO	Listening on 127.0.0.1:52018
+1635662064581	geckodriver	INFO	Listening on 127.0.0.1:52027
+1635662277543	geckodriver	INFO	Listening on 127.0.0.1:52112
+1635662280806	geckodriver	INFO	Listening on 127.0.0.1:52121
+1635662283954	geckodriver	INFO	Listening on 127.0.0.1:52130
+1635677621307	geckodriver	INFO	Listening on 127.0.0.1:57267
+1635677624341	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\siddh\\AppData\\Local\\Temp\\rust_mozprofileSHDTzY"
+1635677625110	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\siddh\\AppData\\Local\\Temp\\rust_mozprofileSHDTzY\\search.json.mozlz4", (void 0)))
+1635677631000	Marionette	INFO	Listening on port 57304
+1635677631369	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1635677669483	Marionette	INFO	Stopped listening on port 57303
+JavaScript error: https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js, line 2: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+les/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js, line 2: NS_ERROR_NOT_INITIALIZED: 
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1635677667702	geckodriver	INFO	Listening on 127.0.0.1:57553
+1635677670754	mozrunner::runner	INFO	Running command: "C:\\P1635677673478	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\siddh\\AppData\\Local\\Temp\\rust_mozproficonsole.warn: SearchSettings: "get: No settings file exists,console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\siddh\\AppData\\Local\\Temp\\rust_mozprofileEiLZgO\\search.json.mozlz4", (console.war1635677680079	Marionette	INFO	Listening on port 57595
+1635677680159	RemoteAgent	WA1635677709072	Marionette	INFO	Stopped listening on port 57567
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+(NS_ERROR_FAILUR1635677709731	Marionette	INFO	Stopped listening on port 57605
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILU1635677710644	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\siddh\\AppData\\Local\\Temp\\rust_mozproficonsole.warn: SearchSettings: "get: No settings file exists,console.warn: SearchSettings: "get: No settings file exists, new profi1635677714801	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\11635677715627	Marionette	INFO	Listening on port 5console.warn: SearchSettings: "get1635677720896	Marionette	INFO	Stopped listening on port 57841635677722841	Marionette	INFO	Stopped listening on port 57852
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent1635677727847	Marionette	INFO	Stopped listening on port 57900
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js, line 2: NS_ERROR_NOT_INITIALIZED: 
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1635679273273	geckodriver	INFO	Listening on 127.0.0.1:54462
+1635679276333	mozrunner::runner	INFO	Running command: "C:\\P1635679276379	mozrunner::runner	INFO	Running command: "C:\\P1635679276441	mozrunner::runner	INFO	Running command: "C:\\P1635679276498	mozrunner::ru1635679278158	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file aconsole.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Cou1635679286588	Marionette	INFO	Listening on port 54489
+1635679286860	RemoteAgent	WARN	TLS certificate errors will b1635679287026	RemoteAgent	WA1635679318836	Marionette	INFO	Stopped listening on port 54489
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js, line 2: NS_ERROR_NOT_INITIALIZED: 
+pt error: resource:///modules/Interactions.jsm, line 209: NS_ERRO1635679318437	Marionette	INFO	Stopped listening on port 54491635679322823	Marionette	INFO	Stopped listening on port 54497
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js, line 2: NS_ERROR_NOT_INITIALIZED: 
+1635679324059	mozrunner::runner	INFO	Running command: "C:\\P1635679324207	mozrunner::runner	INFO	Running command: "C:\\P1635679324298	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firef1635679324850	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists,console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\siddh\\AppData\\Local\\Te1635679330864	Marionette	INFO	Listening on port 5console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError(1635679356616	Marionette	INFO	Stopped listening on port 54751635679361730	Marionette	INFO	Stopped listening on port 54761
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390076,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js, line 2: NS_ERROR_NOT_INITIALIZED: 
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recconsole.warn: SearchSettings: "get: No settings file exists,console.warn: SearchSettings: "get: No settings file exists,1635679366412	mozrunner::runner	INFO	Running command: "C:\\P1635679366804	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\1635679367307	Marionette	INFO	Mari1635679372127	Marionette	INFO	Stopped listening on port 55011635679373356	Marionette	INFO	Stopped listening on port 55024
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: https://admin-demo.nopcommerce.com/lib_npm/jquer1635679375974	Marionette	INFO	Stopped listening on port 55081635679378034	Marionette	INFO	Stopped listening on port 55093
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+ Error: (msgtype=0x390076,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
