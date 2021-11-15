@@ -1,7 +1,7 @@
 # nopAdminSelenium
 Automated Tests For admin-demo.nopcommerce.com
 
-This repositories demonstrates a very basic Test Framework based on Python, Selenium and pytest.
+This repository demonstrates a very basic Test Framework based on Python, Selenium and pytest.
 It primarily explores various features of pytest and the page object model.
 The sailent features of this project are:
 
@@ -17,7 +17,7 @@ The sailent features of this project are:
    
   - Automatic screenshot capture
     - The framework is intelligent enough to determine if a test has failed and automatically takes a screenshot on failure.
-    - Also an api has been provided to easily take full page screenshots with a predefined file name format.
+    - Also, an api has been provided to easily take full page screenshots with a predefined file name format.
     
   - Reporting
     - A separate folder with timestamp is created for each test run containing logs, screenshots and an HTML report.
