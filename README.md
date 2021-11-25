@@ -18,7 +18,11 @@ The sailent features of this project are:
   - Automatic screenshot capture
     - The framework is intelligent enough to determine if a test has failed and automatically takes a screenshot on failure.
     - Also, an api has been provided to easily take full page screenshots with a predefined file name format.
-    
+  
+  - Hassle-free Webdriver Management
+    - The framework automatically handles the driver dependencies for all the browsers.
+    - No need to download and specify new drivers when you update your browsers. It will automatically download (and cache it) all the required webdriver files for the installed browser version. 
+
   - Reporting
     - A separate folder with timestamp is created for each test run containing logs, screenshots and an HTML report.
     - An HTML report is created using pytest-html which summarises passes, failures, logs, time taken by each test etc.
@@ -44,7 +48,7 @@ The sailent features of this project are:
       `sudo pip3 install -r requirements.txt`
 
 ### Executing the Tests
-1. Open a terminal/Command Prompt and cd into the UI-Testing directory.
+1. Open a terminal/Command Prompt and cd into the nopAdminSelenium directory.
 2. To run all the tests, execute the command  
    `pytest --email admin@yourstore.com --password admin` (will execute in Firefox browser by default)  
    **Note: You will need to provide the email and password only when you run the tests for the first time. Or when you wish to change the credentials.**
