@@ -39,7 +39,7 @@ The sailent features of this project are:
 ### Setting up the Environment
 1. Download and install Python 3 from [here](https://www.python.org/downloads/). For Windows users, make sure to check the 'Add Python to Path' box during the setup.
 2. Download and extract the repository files.
-3. Open a terminal/Command Prompt and cd into 'Siddharth-Mathur' directory:  
+3. Open a terminal/Command Prompt and cd into 'nopAdminSelenium' directory:  
    `cd path-to-nopAdminSelenium-directory`
 4. Run the command (requires administrator/root privileges and an internet connection):
     + Windows Users should run command prompt as Administrator and enter:  
