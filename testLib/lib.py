@@ -4,11 +4,12 @@ from time import sleep, time
 from configurations import testconfig
 import random
 import string
+import os
 
 
 def take_screenshot(driver, filetitle="scr"):
-    driver.save_screenshot(
-        testconfig.SCREENSHOTS_DIR + re.sub(":", ".", filetitle + " - " + str(datetime.now()) + ".png"))
+    driver.save_screenshot(os.path.join(
+        testconfig.SCREENSHOTS_DIR, re.sub(":", ".", filetitle + " - " + str(datetime.now()) + ".png")))
 
 
 def take_screenshot_fullpage(driver, filetitle="scr"):
@@ -20,8 +21,8 @@ def take_screenshot_fullpage(driver, filetitle="scr"):
     width = driver.execute_script("return document.body.scrollWidth")
     print(height, width)
     driver.set_window_size(width, height)
-    driver.save_screenshot(
-        testconfig.SCREENSHOTS_DIR + re.sub(":", ".", filetitle + " - " + str(datetime.now()) + ".png"))
+    driver.save_screenshot(os.path.join(
+        testconfig.SCREENSHOTS_DIR, re.sub(":", ".", filetitle + " - " + str(datetime.now()) + ".png")))
 
     # Restore Old Window Size:
     driver.set_window_size(old_width, old_height)

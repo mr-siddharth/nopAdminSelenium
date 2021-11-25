@@ -93,8 +93,36 @@ class TestsAddNewCustomer:
         assert add_customer_page.get_alert_message() == "The customer cannot be in both 'Guests' and 'Registered' customer roles"
 
 
-@pytest.mark.usefixtures("credentials", "add_customer_page")
+@pytest.mark.usefixtures("credentials")
 class TestDropDownLists:
+
+    @pytest.fixture(scope="class")
+    def add_customer_page(self, driver_class_scoped, logger, credentials, request):
+        driver = driver_class_scoped
+        base_url = config.get_base_url()
+        request.cls.base_url = base_url
+        request.cls.driver = driver
+        driver.get(base_url)
+
+        lp = LoginPage(driver)
+        logger.info(f"Attempting login using email: {credentials['email']} and "
+                    f"password: {credentials['password']}")
+        lp.login(credentials['email'], credentials['password'])
+        assert "dashboard" in lp.get_title().lower()
+        logger.info("login successful")
+        wait_till_dom_doesnot_change(driver)
+
+        mm = MainMenu(driver)
+        mm.customers_section.click()
+        mm.customers_lnk.click()
+
+        cp = CustomersPage(driver)
+        cp.wait_till_page_is_loaded(duration=2)
+        cp.btn_addnew.click()
+
+        add_cust_page = AddCustomerPage(driver)
+        add_cust_page.wait_till_page_is_loaded()
+        return add_cust_page
 
     @pytest.mark.regression
     @pytest.mark.sanity
