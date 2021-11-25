@@ -9,11 +9,9 @@ def fetch_testdata(sheetname, td_file=testconfig.MASTER_TESTDATA_FILE,
                    testcase_name=None,
                    datastart_row=2):
 
-    # copy the test data file if it doesn't already exist in the test run directory
-    if not os.path.isfile(testconfig.TEST_RUN_DIR + td_file):
-        shutil.copyfile(f".\\TestData\\{td_file}", testconfig.TEST_RUN_DIR + td_file)
 
-    td_file = testconfig.TESTDATA_FILE = testconfig.TEST_RUN_DIR + td_file
+
+    td_file = testconfig.TESTDATA_FILE = os.path.join("TestData", td_file)
 
     # Loading the test data excel file:
     wb = openpyxl.load_workbook(td_file)
@@ -48,6 +46,12 @@ def fetch_testdata(sheetname, td_file=testconfig.MASTER_TESTDATA_FILE,
 
 
 def write_test_results_passed(sheetname, row_number):
+    # copy the test data file if it doesn't already exist in the test run directory
+    test_data_filename = os.path.split(testconfig.TESTDATA_FILE)[1]
+    testconfig.TESTDATA_FILE = os.path.join(testconfig.TEST_RUN_DIR, test_data_filename)
+    if not os.path.isfile(testconfig.TESTDATA_FILE):
+        shutil.copyfile(os.path.join("TestData", test_data_filename), testconfig.TESTDATA_FILE)
+
     td_file = testconfig.TESTDATA_FILE
     td_wb = openpyxl.load_workbook(td_file)
     td_sheet = td_wb[sheetname]
@@ -64,6 +68,12 @@ def write_test_results_passed(sheetname, row_number):
 
 
 def write_test_results_failed(sheetname, row_number, error_message=""):
+    # copy the test data file if it doesn't already exist in the test run directory
+    test_data_filename = os.path.split(testconfig.TESTDATA_FILE)[1]
+    testconfig.TESTDATA_FILE = os.path.join(testconfig.TEST_RUN_DIR, test_data_filename)
+    if not os.path.isfile(testconfig.TESTDATA_FILE):
+        shutil.copyfile(os.path.join("TestData", test_data_filename), testconfig.TESTDATA_FILE)
+
     td_file = testconfig.TESTDATA_FILE
     td_wb = openpyxl.load_workbook(td_file)
     td_sheet = td_wb[sheetname]

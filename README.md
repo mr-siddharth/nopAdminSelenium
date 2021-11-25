@@ -30,3 +30,31 @@ The sailent features of this project are:
     - Integrated with an example Jenkins Pipeline
     - The tests have been containerized to enable seemless execution from anywhere. Docker file is included.
     - Tests can also be executed on containerized instances of browsers connected to Selenium Grid.
+
+## Running the Tests
+### Setting up the Environment
+1. Download and install Python 3 from [here](https://www.python.org/downloads/). For Windows users, make sure to check the 'Add Python to Path' box during the setup.
+2. Download and extract the repository files.
+3. Open a terminal/Command Prompt and cd into 'Siddharth-Mathur' directory:  
+   `cd path-to-nopAdminSelenium-directory`
+4. Run the command (requires administrator/root privileges and an internet connection):
+    + Windows Users should run command prompt as Administrator and enter:  
+      `pip3 install -r requirements.txt`
+    + Linux/Mac users should enter:  
+      `sudo pip3 install -r requirements.txt`
+
+### Executing the Tests
+1. Open a terminal/Command Prompt and cd into the UI-Testing directory.
+2. To run all the tests, execute the command  
+   `pytest --email admin@yourstore.com --password admin` (will execute in Firefox browser by default)  
+   **Note: You will need to provide the email and password only when you run the tests for the first time. Or when you wish to change the credentials.**
+3. To run only the smoke tests, use the switch, -m:  
+   `pytest -m smoke`
+4. To run the tests in Google Chrome browser, use the switch, --browser:  
+   `pytest --browser=chrome`
+5. To run multiple tests in parallel, use the switch, -n. For example, to run 4 tests in parallel in Chrome at a time, use the command:  
+   `pytest --browser chrome -n 4`
+6. To run tests on Selenium grid, use:
+    `pytest --browser grid --gridhub <gridhub URL>`
+7. To generate an HTML report, use the switch, --html:  
+   `pytest -n 5 --html report.html`
