@@ -1,16 +1,14 @@
-from configparser import RawConfigParser
-
-parser = RawConfigParser()
-parser.read(".\\configurations\\config.ini")
+import os
+import configurations.config as config
 
 
 def get_base_url():
-    return parser.get('common', 'base_url')
+    return config.settings["base_url"]
 
 
 def get_admin_email():
-    return parser.get('common', 'admin_email')
+    return os.environ.get('NOP_ADMIN_EMAIL')
 
 
 def get_admin_password():
-    return parser.get('common', 'admin_password')
+    return os.environ.get('NOP_ADMIN_PASSWORD')

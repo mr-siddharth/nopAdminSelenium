@@ -4,4 +4,7 @@ venv/
 TestRuns/
 report.html
 assets/
+cred
+report_location.txt
+geckodriver.log
 

@@ -1,4 +1,5 @@
 import logging
+import os
 from configurations import testconfig
 
 
@@ -6,7 +7,7 @@ def get_logger():
     logger = logging.getLogger("custom_logger")
 
     # Adding a file handler to the logger
-    f_handler = logging.FileHandler(testconfig.LOG_DIR + "tests.log")
+    f_handler = logging.FileHandler(os.path.join(testconfig.LOG_DIR, "tests.log"))
     f_format = logging.Formatter('%(asctime)s - %(filename)s:%(funcName)s - %(levelname)s - %(message)s')
     f_handler.setFormatter(f_format)
     f_handler.setLevel(logging.INFO)
@@ -18,7 +19,6 @@ def get_logger():
     s_handler.setFormatter(f_format)  # setting the same format as the file handler
     logger.addHandler(s_handler)
 
-    # There seems to be an issue. The logger is not writing INFO level messages. Hence, adding the following line:
     logger.setLevel(logging.INFO)
 
     return logger
