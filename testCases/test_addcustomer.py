@@ -45,7 +45,7 @@ def add_customer_page(driver, logger, credentials):
 @pytest.mark.usefixtures("credentials", "add_customer_page")
 class TestsAddNewCustomer:
 
-    @pytest.mark.sanity
+    @pytest.mark.smoke
     def test_add_customer(self, add_customer_page):
         add_customer_page.email.enter(get_random_string() + "@gmail.com")
         add_customer_page.password.enter("password123")
@@ -124,8 +124,7 @@ class TestDropDownLists:
         add_cust_page.wait_till_page_is_loaded()
         return add_cust_page
 
-    @pytest.mark.regression
-    @pytest.mark.sanity
+    @pytest.mark.smoke
     def test_customer_roles_dropdown(self, add_customer_page):
         roles_list_actual = add_customer_page.customer_roles.get_all_available_roles()
         roles_list_expected = ["Administrators", "Forum Moderators", "Guests", "Registered", "Vendors"]
@@ -141,7 +140,7 @@ class TestDropDownLists:
         newsletter_list_expected.sort()
         assert newsletter_list_actual == newsletter_list_expected
 
-    @pytest.mark.sanity
+    @pytest.mark.smoke
     def test_vendor_manager_dropdown(self, add_customer_page):
         manager_list_actual = add_customer_page.vendormanager.get_managers_list()
         manager_list_expected = ['Not a vendor', 'Vendor 1', 'Vendor 2']

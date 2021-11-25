@@ -20,8 +20,7 @@ class TestsLogIn:
         self.driver.get(self.base_url)
         return LoginPage(self.driver)
 
-    @pytest.mark.sanity
-    @pytest.mark.regression
+    @pytest.mark.smoke
     def test_login(self, logger, login_page, credentials):
         """Verifies that user is able to login with valid credentials."""
 
