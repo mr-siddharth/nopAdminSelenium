@@ -58,7 +58,7 @@ The sailent features of this project are:
    `pytest --browser=chrome`
 5. To run multiple tests in parallel, use the switch, -n. For example, to run 4 tests in parallel in Chrome at a time, use the command:  
    `pytest --browser chrome -n 4`
-6. To run tests on Selenium grid, use:
+6. To run tests on Selenium grid, use:  
     `pytest --browser grid --gridhub <gridhub URL>`
 7. To generate an HTML report, use the switch, --html:  
    `pytest -n 5 --html report.html`
