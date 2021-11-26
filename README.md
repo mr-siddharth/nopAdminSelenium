@@ -1,7 +1,7 @@
 # nopAdminSelenium
 Automated Tests For admin-demo.nopcommerce.com
 
-This repository demonstrates a very basic Test Framework based on Python, Selenium and pytest.
+This repository demonstrates a Test Framework based on Python, Selenium and pytest.
 It primarily explores various features of pytest and the page object model.
 The sailent features of this project are:
 
