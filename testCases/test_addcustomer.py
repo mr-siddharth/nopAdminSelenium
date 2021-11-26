@@ -47,6 +47,9 @@ class TestsAddNewCustomer:
 
     @pytest.mark.smoke
     def test_add_customer(self, add_customer_page):
+        """
+        Verifies that a new customer can be added with details entered in all the available fields.
+        """
         add_customer_page.email.enter(get_random_string() + "@gmail.com")
         add_customer_page.password.enter("password123")
         add_customer_page.firstname.enter("Aman")
@@ -64,6 +67,10 @@ class TestsAddNewCustomer:
         assert add_customer_page.get_alert_message() == "The new customer has been added successfully."
 
     def test_errormessage_noemail_registered_customer(self, add_customer_page):
+        """
+        Verifies that an appropriate error message is shown when a customer is assigned
+        'Registered' role but the email is empty.
+        """
         add_customer_page.customer_roles.select_role("Registered")
         add_customer_page.save_btn.click()
         error_messages_actual = add_customer_page.get_error_messages()
@@ -73,11 +80,19 @@ class TestsAddNewCustomer:
         assert error_messages_actual.sort() == error_messages_expected.sort()
 
     def test_alertmessage_noemail_registered_customer(self, add_customer_page):
+        """
+        Verifies that an appropriate alert message is shown when a customer is assigned
+        'Registered' role but the email is empty.
+        """
         add_customer_page.customer_roles.select_role("Registered")
         add_customer_page.save_btn.click()
         assert add_customer_page.get_alert_message() == "Valid Email is required for customer to be in 'Registered' role"
 
     def test_errormessage_role_cannot_be_both_registered_and_guests(self, add_customer_page):
+        """
+        Verifies that an appropriate error message is shown when a user tries to assign
+        roles, 'Registered' and 'Guests' at the same time to a customer.
+        """
         add_customer_page.email.enter(get_random_string() + "@gmail.com")
         add_customer_page.customer_roles.select_role("Registered")
         add_customer_page.customer_roles.select_role("Guests")
@@ -86,6 +101,10 @@ class TestsAddNewCustomer:
                ["The customer cannot be in both 'Guests' and 'Registered' customer roles"]
 
     def test_alertmessage_role_cannot_be_both_registered_and_guests(self, add_customer_page):
+        """
+        Verifies that an appropriate alert message is shown when a user tries to assign
+        roles, 'Registered' and 'Guests' at the same time to a customer.
+        """
         add_customer_page.email.enter(get_random_string() + "@gmail.com")
         add_customer_page.customer_roles.select_role("Registered")
         add_customer_page.customer_roles.select_role("Guests")
@@ -126,6 +145,10 @@ class TestDropDownLists:
 
     @pytest.mark.smoke
     def test_customer_roles_dropdown(self, add_customer_page):
+        """
+        Verifies that the roles dropdown on the add customer page has all expected
+        roles available.
+        """
         roles_list_actual = add_customer_page.customer_roles.get_all_available_roles()
         roles_list_expected = ["Administrators", "Forum Moderators", "Guests", "Registered", "Vendors"]
         roles_list_actual.sort()
@@ -134,6 +157,10 @@ class TestDropDownLists:
 
     @pytest.mark.regression
     def test_newsletter_dropdown(self, add_customer_page):
+        """
+        Verifies that the newsletter list dropdown on the add customer page has all expected
+        options available.
+        """
         newsletter_list_actual = add_customer_page.newsletter.get_all_available_options()
         newsletter_list_expected = ["Your store name", "Test store 2"]
         newsletter_list_actual.sort()
@@ -142,6 +169,10 @@ class TestDropDownLists:
 
     @pytest.mark.smoke
     def test_vendor_manager_dropdown(self, add_customer_page):
+        """
+        Verifies that the vendor manager dropdown list on the add customer page has all expected
+        options available.
+        """
         manager_list_actual = add_customer_page.vendormanager.get_managers_list()
         manager_list_expected = ['Not a vendor', 'Vendor 1', 'Vendor 2']
         assert manager_list_actual == manager_list_expected

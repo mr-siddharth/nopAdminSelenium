@@ -35,7 +35,7 @@ class TestsLogIn:
         Verifies that user is NOT able to login with invalid credentials.
         Data is fetched from an excel file containing test data. Result of the
         test is written back to the same excel file. This excel file can be found
-        in respective Test Run directory.
+        in the respective Test Run directory.
         """
 
         logger.info(f"Attempting login with email:{testdata['Email']} and password:{testdata['Password']}")
